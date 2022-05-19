@@ -8,11 +8,11 @@
 	>
 
 <channel>
-	<title>IR</title>
+	<title>Iqbal Rachmansyah</title>
 	<atom:link href="https://iqbalrachmansyah.github.io/personalwebsite/feed/" rel="self" type="application/rss+xml" />
 	<link>https://iqbalrachmansyah.github.io/personalwebsite</link>
-	<description>Hi, I&#039;m Iqbal!</description>
-	<lastBuildDate>Sun, 24 Apr 2022 15:37:14 +0000</lastBuildDate>
+	<description>Let&#039;s learn, implement, &#38; share together :)</description>
+	<lastBuildDate>Thu, 19 May 2022 10:42:10 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,7 @@
 
 <image>
 	<url>https://iqbalrachmansyah.github.io/personalwebsite/wp-content/uploads/2022/04/cropped-Logo-32x32.png</url>
-	<title>IR</title>
+	<title>Iqbal Rachmansyah</title>
 	<link>https://iqbalrachmansyah.github.io/personalwebsite</link>
 	<width>32</width>
 	<height>32</height>
