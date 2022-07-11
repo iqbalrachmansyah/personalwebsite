@@ -1,1 +1,794 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>BigBro Sneakers Digitalization Strategy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e892305e-b886-4ca5-852f-f3e22010402b" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Logo%201.png"/></div><h1 class="page-title">BigBro Sneakers Digitalization Strategy</h1><table class="properties"><tbody></tbody></table></header><div class="page-body"><div id="b4e31fa1-5fab-475d-8ead-0da0450748e8" class="column-list"><div id="d7944ec0-7f11-46c7-b364-f8c36c25095b" style="width:18.75%" class="column"><p id="14c68ffb-dba9-4abc-b845-b870bed0db97" class=""><strong>PDF Version :</strong></p></div><div id="ee86bb9e-5f5d-4340-b78c-2c83c95475e9" style="width:81.25%" class="column"><figure id="f61bf107-3d0d-4ab2-921e-8cce65aeed6b"><div class="source"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/BigBro_Sneakers_Digitalization_Strategy.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/22acae82-cb10-4649-bc5f-1450e0ca9071/BigBro_Sneakers_Digitalization_Strategy.pdf</a></div></figure></div></div><figure id="98893904-7997-4632-98f1-81e0ef7c32cb" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Logo.png"><img style="width:432px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Logo.png"/></a></figure><p id="00b74abd-f725-477b-960a-c54b2f62a253" class=""><span style="border-bottom:0.05em solid"><strong><mark class="highlight-gray">Table of Contents</mark></strong></span><div class="indented"><nav id="4e51c336-229c-465e-bef8-c707decfa7d0" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#918cec2e-fc68-4038-80aa-772518fd2576">Problem-Solution Alignment</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3e7a45b6-1727-4b66-ae53-a6aeb47ba108">Problem Background</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2fa58419-fa16-4c85-a987-8967df08eeca">Target Audience &amp; User Pain Point</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9a884884-2ba9-4282-95fb-3b8913567c18">High-level Solution &amp; Description </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3e55b9d6-2d95-4273-8315-684bbda3883c">Implementation Plan</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ca951984-13b8-441e-b539-53bc86294db0">Goals &amp; Success Metrics</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f03f8818-1c9f-463d-b43f-57f49c8f5fa8">Prioritization*</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#85bc8eba-53fd-466c-b735-c6231f24f89e">Timeline / Roadmap*</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3dc1927a-bd8f-47d6-8c50-98b198731fbd">Key Features &amp; User Stories Map</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e69621ed-9e86-41b7-88da-b83729c9847d">User Flow</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d52b5d9a-1438-4603-84e8-6246463f1de1">Lo-Fi Wireframe &amp; Hi-Fi Visual Design</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eccd0ead-4202-4846-ab66-7410a4fbf699">Test Case</a></div></nav></div></p><p id="4c84e080-8cd2-4b04-8d2b-480d9145b8a3" class="">
+</p><h2 id="918cec2e-fc68-4038-80aa-772518fd2576" class="">Problem-Solution Alignment</h2><hr id="8e75b932-f32a-49df-88a8-1e933445456c"/><h3 id="3e7a45b6-1727-4b66-ae53-a6aeb47ba108" class="">Problem Background</h3><p id="bc7591b6-d541-4c17-a7aa-6d2cc065797f" class="">BigBro Sneakers (BBS) merupakan sneakers retail store yang dipercaya akan menjadi salah satu retail store terbesar yang ada di Jakarta. Sejauh ini, kelengkapan dan ketersediaan produk dengan berbagai merk-model-ukuran (<em>new-release / old-release</em>), serta kualitas produk yang autentik/original, menjadikan BBS mulai dikenali dan dipercaya oleh sneakerhead sebagai salah satu retail store yang mampu memberikan pengalaman berbelanja terbaik.</p><p id="ec36bdf0-39b0-4450-8a17-288aede6d95f" class="">Perluasan jangkauan dan peningkatan jumlah <em>demand </em>secara keseluruhan (di Jakarta dan luar Jakarta), menjadi tantangan baru untuk BBS. Dengan operasi bisnis yang masih bersifat tradisional dan sistem penjualan yang masih <em>offline</em>, mengakibatkan BBS belum mampu memberikan <em>user experiences </em>yang terbaik kepada pembelinya, yang akan berpotensi pada hilangnya peluang bisnis (<em>growth, revenue, profit, etc</em>) yang sangat besar bagi BBS.</p><p id="85a6670d-e98a-4f3b-873c-0ec09e3d4cd3" class="">Beberapa kondisi eksisting* terkait operasi bisnis dan sistem penjualan yang dilakukan BBS saat ini:</p><ul id="aa149219-af86-4daa-bebf-32962d3e42d4" class="bulleted-list"><li style="list-style-type:disc">BBS <strong>belum melakukan strategi promosi bisnis secara online </strong>(Sosial Media, dll). Sejauh ini, peningkatan <em>brand awareness </em>murni hanya dari rekomendasi <em>mouth-to-mouth</em> saja.</li></ul><ul id="07a2a3a0-07b7-4964-ab8a-4eff70e67329" class="bulleted-list"><li style="list-style-type:disc">BBS <strong>belum bisa melakukan pengiriman barang melalui 3PL</strong> (JNE, SiCepat, AnterAja, dll).</li></ul><ul id="2fde357b-fc55-440c-8989-b36333d52c9e" class="bulleted-list"><li style="list-style-type:disc">BBS<strong> belum memiliki </strong><strong><em>online store </em></strong>(untuk End-User), baik itu yang bersifat <em>private platform </em>(web app / mobile app), ataupun <em>e-commerce platform </em>(Tokopedia, Shopee, dll).</li></ul><ul id="c4998a77-e5a8-4e3d-b99f-514a219de816" class="bulleted-list"><li style="list-style-type:disc">BBS <strong>tidak memiliki katalog digital </strong>terkait produk yang dijual (merk, model, ukuran, sisa stok, dan status re-stok).</li></ul><ul id="26e5fa29-01cb-448e-8de2-b5008f07dec6" class="bulleted-list"><li style="list-style-type:disc"><strong>Informasi apapun</strong> yang ingin diketahui pembeli hanya bisa didapatkan dengan <strong>langsung menanyakannya </strong>ke pihak BBS (dengan WhatsApp).</li></ul><ul id="4db0ef4e-e5a4-4e92-b1fd-fbdcd96a961d" class="bulleted-list"><li style="list-style-type:disc">BBS <strong>memiliki sistem operasional bisnis </strong>(inventaris produk, transaksi penjualan, dll) <strong>yang sangat tradisional</strong>.</li></ul><ul id="e581dc6c-c020-47d9-81fb-72af5c9a361e" class="bulleted-list"><li style="list-style-type:disc">BBS <strong>mengelola fasilitas gudang / </strong><em><strong>storage</strong></em><strong> untuk produknya secara mandiri</strong>.</li></ul><ul id="9383f2a7-87c0-4f28-99d6-3284e5d1869e" class="bulleted-list"><li style="list-style-type:disc">BBS<strong> belum memiliki tim </strong>Customer Service &amp; QC <strong>yang cukup lengkap</strong>.</li></ul><p id="d914b7d0-3d3d-4ff4-b189-ac271b7eded6" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6b1113a2-1e0b-41df-99b9-2457f7257df9"><div style="font-size:1.5em"><span class="icon">✴️</span></div><div style="width:100%"><mark class="highlight-gray"><strong>Catatan : </strong></mark><mark class="highlight-gray">Fakta terkait kondisi eksisting diatas merupakan asumsi tambahan atas </mark><em><mark class="highlight-gray">initial brief </mark></em><mark class="highlight-gray">oleh </mark><em><mark class="highlight-gray">business owner </mark></em><mark class="highlight-gray">yang ada pada Case Study.</mark></div></figure><p id="5137c9ab-9ade-4e2f-8426-c86a92149d3e" class="">
+</p><p id="8477bdd8-8ce9-4f09-9aec-bd4ddc0e3314" class="">😒 <strong>Problem Statement</strong></p><p id="b3560cd2-8140-498d-9ec6-58720f79712b" class="">Jumlah permintaan pembeli yang terus meningkat, tanpa diikuti dengan adanya peningkatan kualitas layanan oleh BBS, akan <strong>mengakibatkan masalah yang serius untuk keberlangsungan bisnis BBS</strong> sendiri. <strong>Tingkat kepuasan dan pengalaman pembeli akan menurun</strong>, dan dalam jangka menengah-panjang akan <strong>menurunkan peluang bisnis (</strong><strong><em>growth, revenue, profit, etc</em></strong><strong>)</strong> yang sangat besar bagi BBS. </p><p id="3cae30d4-da5a-4105-8569-b545c49bbd4c" class="">
+</p><p id="74191671-443e-482e-a6fe-18a27d1c1320" class="">❓ <strong>How Might We</strong></p><p id="015c642c-37f0-49d9-8fde-e70374241280" class="">Oleh karena itu,<strong> diperlukan solusi yang dapat mengoptimalkan kepuasan dan pengalaman pembeli, serta peluang bisnis bagi BBS</strong> di waktu yang akan datang.</p><p id="676d721b-4cac-49cf-9087-666e263ab402" class="">
+</p><h3 id="2fa58419-fa16-4c85-a987-8967df08eeca" class="">Target Audience &amp; User Pain Point</h3><p id="ffffe60d-d202-41da-be4e-1bc24bbe968b" class="">Hasil <em>in-depth interview*</em> yang dilakukan kepada beberapa pihak yang bersinggungan dengan BBS, yang disintesis dalam bentuk Proto Persona, adalah sebagai berikut.</p><p id="0944be8b-527e-4eb5-a23e-3420dcaa19ad" class="">
+</p><div id="7726a88f-7ec6-4545-8e8d-ceb6a0eb48ea" class="column-list"><div id="897f070c-354b-4126-8f83-60ea85a425c4" style="width:25%" class="column"><figure id="cc1ef6a2-cccf-44f3-ae17-0cc86a90e30a" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled.png"><img style="width:726px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled.png"/></a></figure></div><div id="01285014-be66-4381-b604-1f75649d62f7" style="width:75%" class="column"><p id="52ab2af6-30e8-4049-b3ce-4c3acc1314c1" class=""><strong>Rian Saepuloh</strong></p><ul id="563f673c-f643-4d05-8fbe-baa91a31a07c" class="bulleted-list"><li style="list-style-type:disc"><strong>Umur</strong>: <mark class="highlight-gray">36 tahun</mark></li></ul><ul id="10a60a53-05c9-4a31-876c-6ac6a6f5b5c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Pekerjaan</strong>:<mark class="highlight-gray"> BBS Owner</mark></li></ul><ul id="63d84e13-db4f-4d29-bddc-a88a3279bbb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Lokasi</strong>: <mark class="highlight-gray">Jakarta Selatan</mark></li></ul><ul id="7eb3cb3d-bf85-496c-9604-7a66fa3d7d91" class="bulleted-list"><li style="list-style-type:disc"><strong>Status</strong>: <mark class="highlight-gray">Single</mark></li></ul></div></div><div id="7808ebc7-365b-482e-aa8f-04e9e6b107ff" class="column-list"><div id="611deaa0-28c3-4386-b733-4c040828c607" style="width:50%" class="column"><p id="c7d776d8-f623-45f1-a4d2-254ab537834e" class=""><strong>Motivasi / Tujuan</strong></p><ul id="f49e407e-f9f6-41c9-a91d-70509252e42c" class="bulleted-list"><li style="list-style-type:disc">Memenuhi kebutuhan / permintaan pembeli.</li></ul><ul id="1ccacf31-69a5-4373-a44b-918cae9484f9" class="bulleted-list"><li style="list-style-type:disc">Memberikan kepuasan dan pengalaman berbelanja terbaik untuk pembeli.</li></ul><ul id="4028a7f4-800e-42b5-a636-aeb67cad9809" class="bulleted-list"><li style="list-style-type:disc">Mengetahui statistik / laporan penjualan produk.</li></ul><ul id="1396e670-bdc9-4e78-9564-7e17c161581f" class="bulleted-list"><li style="list-style-type:disc">Memantau semua aktivitas yang dilakukan oleh staff.</li></ul><ul id="b2b024b0-4a82-40c1-bbf6-f64c4d369e05" class="bulleted-list"><li style="list-style-type:disc">Mengoptimalkan potensi revenue.</li></ul></div><div id="14ab619f-859d-4d0f-80a6-562c0ff3c636" style="width:50%" class="column"><p id="b1fe4822-6390-4cec-bafa-6a4c68fcaebd" class=""><strong>Frustrasi</strong></p><ul id="e38d1a9d-ebc5-4775-8b08-caa19c659edf" class="bulleted-list"><li style="list-style-type:disc">Tidak dapat memenuhi sepenuhnya permintaan pembeli yang tidak terjangkau dari lokasi <em>offline store / </em>kehilangan banyak pembeli potensial.</li></ul><ul id="170ce98f-92ba-4018-ac5c-dbef4c87db8b" class="bulleted-list"><li style="list-style-type:disc">Khawatir tidak dapat memenuhi harapan / permintaan pembeli.</li></ul><ul id="bff8a77e-2ed7-47d7-af46-62a85e9ac6ab" class="bulleted-list"><li style="list-style-type:disc">Sulit menyusun strategi pemasaran produk (strategi <em>pricing model </em>untuk produk yang akan dijual, serta strategi promosi &amp; loyalti), karena data perilaku pembeli dalam membeli produk tidak tersintesis dengan baik.</li></ul><ul id="1f3f7e9d-d948-436f-9f81-57dae591516f" class="bulleted-list"><li style="list-style-type:disc">Sulit menyusun strategi pengadaaan dan penjualan produk.</li></ul><ul id="55ffd303-3dfa-4ce6-a502-23fb26080995" class="bulleted-list"><li style="list-style-type:disc">Sulit untuk melakukan tracking terhadap operasi bisnis yang dilakukan oleh staff.</li></ul><ul id="33d3e584-eb22-43c6-a739-6c716d6920be" class="bulleted-list"><li style="list-style-type:disc">Inefisiensi operasi bisnis akan mengurangi potensi revenue.</li></ul></div></div><div id="c2d8d6e7-8bb3-41a6-ac4b-718e27b07ee7" class="column-list"><div id="eb3e7dca-7455-4600-8983-7191a4306b1d" style="width:25%" class="column"><figure id="2e38b7d4-67c4-45d6-bf47-d4109153070f" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%201.png"><img style="width:732px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%201.png"/></a></figure></div><div id="3a172ab2-d787-4feb-b560-2785a97a6c9f" style="width:75%" class="column"><p id="4af5b082-d540-4e46-9b4c-48377c3c2e90" class=""><strong>Doni Pribadi</strong></p><ul id="f1a173b4-d80e-4f42-8d11-67550b26a292" class="bulleted-list"><li style="list-style-type:disc"><strong>Umur</strong>: <mark class="highlight-gray">32 tahun</mark></li></ul><ul id="78a4cd88-0cc5-459b-b518-b1890ae1b277" class="bulleted-list"><li style="list-style-type:disc"><strong>Pekerjaan</strong>:<mark class="highlight-gray"> BBS Staff</mark></li></ul><ul id="ad1c4900-6386-42e4-8b2d-c40e64fbc087" class="bulleted-list"><li style="list-style-type:disc"><strong>Lokasi</strong>: <mark class="highlight-gray">Jakarta Selatan</mark></li></ul><ul id="09dad7f5-2841-45d8-9b38-693dd122c51c" class="bulleted-list"><li style="list-style-type:disc"><strong>Status</strong>: <mark class="highlight-gray">Single</mark></li></ul></div></div><div id="927b4b8c-8f3d-443a-954e-f0473ee3ae73" class="column-list"><div id="8d8ea19b-2b8f-437e-917d-070a3de7a2b4" style="width:50%" class="column"><p id="d22cb7a4-f063-4586-8eb9-108d341c1ddb" class=""><strong>Motivasi / Tujuan</strong></p><ul id="3a6253d5-2947-4489-95b9-69c9faffbab5" class="bulleted-list"><li style="list-style-type:disc">Memberikan informasi produk seakurat dan secepat mungkin kepada pembeli.</li></ul><ul id="09953d44-ed48-448a-a1d6-f53cd3bb4eab" class="bulleted-list"><li style="list-style-type:disc">Melakukan stock opname secepat dan seakurat mungkin.</li></ul><ul id="6ea5dbda-a53a-4b56-b13a-1d943e15f6ef" class="bulleted-list"><li style="list-style-type:disc">Memiliki database spesifikasi produk dengan baik.</li></ul><ul id="abe2c9d6-d163-47cf-a265-67e931eb2276" class="bulleted-list"><li style="list-style-type:disc">Memberikan produk yang akurat sesuai kebutuhan / permintaan pembeli.</li></ul><ul id="79bdbf95-52bc-45d7-b952-eb2fc265d113" class="bulleted-list"><li style="list-style-type:disc">Meminimalisir jumlah komplain, dan mempercepat proses komplain.</li></ul></div><div id="3d4cc05e-1440-4291-874a-860ac700d68d" style="width:50%" class="column"><p id="fed84b78-cf67-41bb-93fd-97e76b080a5f" class=""><strong>Frustrasi</strong></p><ul id="cb5b4710-725d-4303-b0b3-c87b39f0e029" class="bulleted-list"><li style="list-style-type:disc">Menjawab banyak sekali pertanyaan yang sama dan berulang-ulang dari pembeli yang berbeda-beda hanya untuk mendapatkan informasi produk lama yang sedang dijual (merk, model, ukuran, sisa stok, status re-stok) / produk baru yang akan dijual (merk, model, ukuran, waktu rilis).</li></ul><ul id="8c77ec59-05a9-46c2-bf56-dcd6facf6e01" class="bulleted-list"><li style="list-style-type:disc">Kebingungan ketika jadwal rilis produk baru berubah.</li></ul><ul id="6240bb0c-7551-4fcc-99a3-f68b4ee9cb1c" class="bulleted-list"><li style="list-style-type:disc">Sulit ketika melakukan stok opname, seringkali ada perbedaan jumlah pencatatan dengan jumlah produk fisik yang ada</li></ul><ul id="90667e9c-9dfe-429d-9282-52a60a77f540" class="bulleted-list"><li style="list-style-type:disc">Spesifikasi beberapa produk yang tidak tercatat dengan baik.</li></ul><ul id="260f7cf4-54af-4d4f-b9e6-33c5d6408fe2" class="bulleted-list"><li style="list-style-type:disc">Memberikan produk <em>new-release </em>ke pembeli yang berbeda (tidak sesuai pemesanan).</li></ul><ul id="2e2eb0aa-5e55-4afb-9b9b-5debd163b444" class="bulleted-list"><li style="list-style-type:disc">Pengecekan berulang ketika ada komplain dari pembeli (selain karena masalah QC yang kurang baik).</li></ul></div></div><div id="7b43959a-70d5-4639-ae28-de95fab0446a" class="column-list"><div id="0a20fff3-b20a-4505-a51d-efcfb7186cd4" style="width:25%" class="column"><figure id="56440736-0bc5-4487-91f9-65972f997269" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%202.png"><img style="width:517px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%202.png"/></a></figure></div><div id="63955d08-24f6-4ecd-bfd3-a99f054d559d" style="width:75%" class="column"><p id="103d08e3-bcbf-4d4a-8661-e4d408cf08a7" class=""><strong>Marcel Herlan</strong></p><ul id="c3a690b1-e894-4da7-996a-93d5c3f91c17" class="bulleted-list"><li style="list-style-type:disc"><strong>Umur</strong>: <mark class="highlight-gray">24 tahun</mark></li></ul><ul id="f9a1e087-c334-4410-b5f6-48e3605a546a" class="bulleted-list"><li style="list-style-type:disc"><strong>Pekerjaan</strong>: <mark class="highlight-gray">Freelancer</mark></li></ul><ul id="181f7dce-104c-4756-90cf-1a45f89f3b65" class="bulleted-list"><li style="list-style-type:disc"><strong>Lokasi</strong>: <mark class="highlight-gray">Bandung</mark></li></ul><ul id="0acb1477-b684-47dc-bf37-c2af282106ac" class="bulleted-list"><li style="list-style-type:disc"><strong>Status</strong>: <mark class="highlight-gray">Single</mark></li></ul></div></div><div id="50a3d3ec-eb37-4d10-8bbe-290510b737c6" class="column-list"><div id="63743394-4aac-460e-9a2e-6454a5fd732d" style="width:50%" class="column"><p id="3604be96-6f22-436c-bcd5-112728bb56c0" class=""><strong>Motivasi / Tujuan</strong></p><ul id="c777612c-38e2-4a28-8f04-7425cec20008" class="bulleted-list"><li style="list-style-type:disc">Dapat membeli produk yang ingin dibeli tanpa harus datang ke toko.</li></ul><ul id="324e1dfb-3d5e-48c1-acc3-47b29d9defbc" class="bulleted-list"><li style="list-style-type:disc">Ingin mendapatkan banyak voucher diskon untuk mendapatkan produk dengan harga termurah.</li></ul><ul id="06b5e016-7dc8-4982-bf96-321619b67edd" class="bulleted-list"><li style="list-style-type:disc">Mendapatkan informasi terkait spesifikasi dan ketersediaan produk, baik untuk produk lama yang sedang dijual atau produk baru yang akan dijual secara <em>real-time </em>dan akurat<em>.</em></li></ul><ul id="b6507848-c8b7-43e7-87be-bf01fc0fa60d" class="bulleted-list"><li style="list-style-type:disc">Mendapatkan produk yang sesuai dengan spesifikasi yang diberikan, serta sesuai dengan pemesanan yang dilakukan.</li></ul><ul id="5333296c-990c-414e-afd2-707c067166ff" class="bulleted-list"><li style="list-style-type:disc">Tidak memakan waktu yang lama ketika melakukan komplain produk.</li></ul><p id="19b8c7f2-cc64-4400-a209-f13e26219eda" class="">
+</p></div><div id="33fe393b-0b38-415e-b695-88541eaf3e2e" style="width:50%" class="column"><p id="6b91f88f-f9d2-499a-a349-48b05f179371" class=""><strong>Frustrasi</strong></p><ul id="30c822ca-e9bb-48b6-843c-9b3ba12de3c3" class="bulleted-list"><li style="list-style-type:disc">Sulit untuk membeli produk yang dijual, karena harus selalu datang ke toko langsung untuk membeli produk.</li></ul><ul id="dfd6b726-292f-421e-9fa9-b5bee7c41504" class="bulleted-list"><li style="list-style-type:disc">Sulit untuk mendapatkan informasi promo dan diskon terbaru dari pihak penjual.</li></ul><ul id="589d693a-fd04-471a-aa84-b079aed3f198" class="bulleted-list"><li style="list-style-type:disc">Sulit untuk untuk mengetahui spesifikai produk lama yang sedang dijual / produk baru yang akan dijual (karena harus menanyakan banyak hal, serta membutuhkan proses yang rumit dan waktu yang lama).</li></ul><ul id="ca943ac3-fc9c-418a-b82a-4e3535a81e38" class="bulleted-list"><li style="list-style-type:disc">Harus menanyakan hal yang sama berulang-ulang untuk mengetahui ketersediaan produk lama yang sedang dijual (karena tidak menerima informasi yang <em>auto-update</em> terkait sisa stok dan jadwal re-stok produk) / produk baru yang akan dijual (karena tidak menerima informasi yang <em>auto-update</em> terkait status pengiriman barang dari pabrik).</li></ul><ul id="28332a30-0739-4850-8632-6d1cbf06a678" class="bulleted-list"><li style="list-style-type:disc">Tidak menerima informasi stok dan jadwal rilis produk baru dengan tepat.</li></ul><ul id="b3707500-4077-43d3-bfce-cf43582a2fda" class="bulleted-list"><li style="list-style-type:disc">Menerima produk (merk, model, bahan, ukuran, dll) yang tidak sesuai dengan spesifikasi yang disampaikan ketika berdiskusi dengan BBS.</li></ul><ul id="ecf17e5b-cf78-4d7b-8cf2-664f6304e982" class="bulleted-list"><li style="list-style-type:disc">Mendapatkan produk yang tidak sesuai dengan pemesanan (<em>pre-order</em>).</li></ul><ul id="cb811f76-fc3c-4463-b8ec-0f24c11be40a" class="bulleted-list"><li style="list-style-type:disc">Membutuhkan waktu yang cukup lama untuk mengkomplain ketika terjadi ketidaksesuaian produk dengan spesifikasi (selain karena masalah QC yang kurang baik).</li></ul></div></div><p id="69b3ff93-c0c9-4cc3-8a0f-20922e3330fd" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9ad0c036-c88c-408f-bdd2-370e791101fc"><div style="font-size:1.5em"><span class="icon">✴️</span></div><div style="width:100%"><mark class="highlight-gray"><strong>Catatan : </strong></mark><mark class="highlight-gray">Motivasi / Tujuan dan Frustasi yang disintesis merupakan hipotesis terkait masalah yang dialami dengan kondisi operasi bisnis dan sistem penjualan seperti dijelaskan sebelumnya.</mark></div></figure><p id="2ff6b816-ad41-4275-8421-2d00128f1302" class="">
+</p><h3 id="9a884884-2ba9-4282-95fb-3b8913567c18" class="">High-level Solution &amp; Description </h3><p id="f5483328-56f2-48ea-8fb4-d064e1b5734a" class="">3 user persona diatas dapat <strong>dikategorikan kedalam 2 segmen</strong>, yaitu dari<strong> sisi bisnis</strong> dan <strong>sisi pembeli</strong>. Keduanya memiliki permasalahan yang berbeda, sehingga<strong> solusi yang diusulkan harus bisa mengakomodir berbagai permasalahan</strong> yang muncul dari kedua segmen tersebut. </p><p id="a8254b0c-0e46-4e00-8163-a93c396a7bc4" class="">Secara sederhana, <em>high-level solution </em>untuk menyelesaikan permasalahan yang ada, dapat dilihat sebagai berikut.</p><p id="fc47d891-03a5-40d0-bf6c-8def6c10db01" class="">
+</p><figure id="2bf3d1ca-17fa-4084-8d07-0edc27f48579" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Group.png"><img style="width:3582px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Group.png"/></a></figure><p id="5a4909fa-aabd-413f-bd80-345d508a787e" class="">
+</p><p id="edf8c5ad-7bd3-46c8-87d0-ea1de3bd5b7b" class="">Sementara <strong><em>Opportunity Canvas </em></strong>berikut dapat menjelaskan hipotesis ide / solusi apa yang dapat menyelesaikan masalah yang ada.</p><p id="420bd3b1-4f1e-4d91-893b-82b56e354d35" class="">
+</p><p id="a27e50cb-2e9a-4866-86e9-42ca9becc738" class=""><strong>Untuk Bisnis</strong></p><table id="2da81782-6fad-4257-814f-859a7a6b420a" class="simple-table"><thead class="simple-table-header"><tr id="77b6b98a-a29a-467a-8209-fb5d0b35ba1c"><th id="u@x@" class="simple-table-header-color simple-table-header" style="width:121.33334350585938px"><strong>Fitur</strong></th><th id="]Bq|" class="simple-table-header-color simple-table-header" style="width:210.92593383789062px"><strong>Sub-fitur</strong></th><th id="oEsE" class="simple-table-header-color simple-table-header" style="width:321.4444580078125px"><strong>Tujuan / Deskripsi Fitur</strong></th></tr></thead><tbody><tr id="2efb371b-5d9e-4f13-a3bc-5c58b7c048cb"><td id="u@x@" class="" style="width:121.33334350585938px"><strong>Laporan</strong></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Transaksi / Pesanan </strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat statistik transaksi jual-beli / pesanan yang ada di toko secara historis.</td></tr><tr id="339e548a-208b-4309-bb8b-f78564ded839"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Produk</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat statistik performa produk yang dijual di toko secara historis.</td></tr><tr id="f5be2bf2-228d-4b1e-ab49-6bb4abac2578"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Penjualan</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat statistik penjualan (unit dan pendapatan) yang ada di toko secara historis.</td></tr><tr id="356c2fc6-7a6f-4357-9931-f5f21c6c1072"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Operasional</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat statistik performa operasional transaksi / pesanan yang ada di toko secara historis.</td></tr><tr id="f6ad67dc-9496-4976-8a9d-a50b7142ab3a"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Pembeli</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat dan memperbarui daftar - detail pengguna aplikasi yang terdaftar, serta performa pembelian secara historis.</td></tr><tr id="501d7af0-20bb-4cb0-9eb7-c7df8c0c335e"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Laporan Inventaris</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat dan memperbarui daftar - detail inventaris produk yang sudah tidak ada didalam gudang, yang masih ada didalam gudang, dan yang akan masuk kedalam gudang. Termasuk riwayat stok opname (terintegrasi dengan fitur produk dan pesanan).</td></tr><tr id="7589c6a1-3eca-4952-9559-466cd11a5cf2"><td id="u@x@" class="" style="width:121.33334350585938px"><strong>Produk</strong> <mark class="highlight-gray">(Inbound, Stok)</mark></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Detail Produk</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Mencatat informasi detail produk (spesifikasi, status stok, dll) yang sedang / akan dijual.</td></tr><tr id="5c96bc05-4029-479c-8c18-91e7f0c94412"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Katalog Produk</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat daftar inventaris produk yang pernah, sedang, ingin, dan akan dijual oleh toko.</td></tr><tr id="dd971bb5-6112-4d85-8ea7-19b316699d3d"><td id="u@x@" class="" style="width:121.33334350585938px"><strong>Chat</strong></td><td id="]Bq|" class="" style="width:210.92593383789062px">-</td><td id="oEsE" class="" style="width:321.4444580078125px">Melakukan komunikasi dengan pembeli secara <em>real-time </em>terkait semua hal yang berkaitan dengan transaksi / pesanan dan produk.</td></tr><tr id="7db59d6c-90f6-47c7-ae0c-bfeca9077173"><td id="u@x@" class="" style="width:121.33334350585938px"><strong>Pesanan </strong><mark class="highlight-gray">(Outbound)</mark></td><td id="]Bq|" class="" style="width:210.92593383789062px">-</td><td id="oEsE" class="" style="width:321.4444580078125px">Mengelola semua transaksi / pesanan yang dilakukan oleh pembeli.</td></tr><tr id="51488e2d-4ab8-448a-a9c9-e3322e38ab62"><td id="u@x@" class="" style="width:121.33334350585938px"><strong>Konsumen</strong></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Promosi &amp; Loyalti</strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Mengelola program promosi dan loyalti terkait penjualan produk.</td></tr><tr id="66700bb3-3d4a-4946-a690-7d2b3dabb816"><td id="u@x@" class="" style="width:121.33334350585938px"></td><td id="]Bq|" class="" style="width:210.92593383789062px"><strong>Ulasan </strong></td><td id="oEsE" class="" style="width:321.4444580078125px">Melihat dan merespon ulasan yang diberikan oleh pembeli terkait pengalaman belanja yang dirasakan.</td></tr></tbody></table><p id="a08361f5-339b-4ac7-9dd0-4e585b30e1d6" class=""><strong>Untuk Pembeli</strong></p><table id="78a2cc62-9a61-4be5-b0ba-47cece23f05e" class="simple-table"><thead class="simple-table-header"><tr id="cabe2dda-2175-4292-a618-d8d86000d476"><th id="u@x@" class="simple-table-header-color simple-table-header" style="width:122.33334350585938px"><strong>Fitur</strong></th><th id="epKp" class="simple-table-header-color simple-table-header" style="width:211.629638671875px"><strong>Sub-fitur</strong></th><th id="oEsE" class="simple-table-header-color simple-table-header" style="width:317.9629821777344px"><strong>Tujuan / Deskripsi Fitur</strong></th></tr></thead><tbody><tr id="9bc4c8fd-0827-4820-8fc6-90d39101886e"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Papan Iklan</strong></td><td id="epKp" class="" style="width:211.629638671875px">-</td><td id="oEsE" class="" style="width:317.9629821777344px">Mendapatkan informasi terkait program promo dan loyalti terbaru yang ditawarkan, serta informasi terkait jadwal perilisan dan stok produk terbaru.</td></tr><tr id="850994e1-51a2-43fa-96fc-7c81c31fd9e8"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Produk</strong></td><td id="epKp" class="" style="width:211.629638671875px"><strong>Katalog Produk</strong></td><td id="oEsE" class="" style="width:317.9629821777344px">Mengetahui produk-produk apa saja yang sedang / akan dijual di toko.</td></tr><tr id="bdd1a463-b3b5-498d-a608-65244f3bfdfc"><td id="u@x@" class="" style="width:122.33334350585938px"></td><td id="epKp" class="" style="width:211.629638671875px"><strong>Detail Produk</strong></td><td id="oEsE" class="" style="width:317.9629821777344px">Mengetahui informasi produk (spesifikasi, status stok, dll) yang sedang / akan dijual sedetail mungkin.</td></tr><tr id="883db4b1-9210-4b96-b3d1-39af49629065"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Akun Pembeli</strong></td><td id="epKp" class="" style="width:211.629638671875px"><strong>Informasi Akun</strong></td><td id="oEsE" class="" style="width:317.9629821777344px">Mengetahui dan memperbarui semua informasi terkait data diri yang berhubungan dengan proses transaksi / pesanan.</td></tr><tr id="5b7a654e-1adc-4435-aee0-d81c24ceb176"><td id="u@x@" class="" style="width:122.33334350585938px"></td><td id="epKp" class="" style="width:211.629638671875px"><strong>Registrasi Akun</strong></td><td id="oEsE" class="" style="width:317.9629821777344px">Mendaftarkan diri pada sistem toko, sebagai syarat untuk melakukan chat dengan pihak toko, dan melakukan proses transaksi / pesanan.</td></tr><tr id="9a4be7bf-9de8-4b1d-a933-7d96a4920950"><td id="u@x@" class="" style="width:122.33334350585938px"></td><td id="epKp" class="" style="width:211.629638671875px"><strong>Login Akun</strong></td><td id="oEsE" class="" style="width:317.9629821777344px">Mengautentikasi informasi akun yang tekah terdaftar pada sistem toko.</td></tr><tr id="81577505-db09-49f7-ad29-178ebb94f9f8"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Chat</strong></td><td id="epKp" class="" style="width:211.629638671875px">-</td><td id="oEsE" class="" style="width:317.9629821777344px">Melakukan komunikasi dengan pihak toko secara <em>real-time </em>terkait semua hal yang berkaitan dengan transaksi / pesanan dan produk.</td></tr><tr id="b943a143-b1c6-4a7a-8c65-ff250bbed755"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Keranjang Belanja</strong></td><td id="epKp" class="" style="width:211.629638671875px">-</td><td id="oEsE" class="" style="width:317.9629821777344px">Meninjau ulang dan memperbarui produk apa saja yang sudah masuk ke dalam keranjang sebelumnya.</td></tr><tr id="ba26c874-0750-4835-b12d-e4564cf80e31"><td id="u@x@" class="" style="width:122.33334350585938px"><strong>Checkout</strong></td><td id="epKp" class="" style="width:211.629638671875px">-</td><td id="oEsE" class="" style="width:317.9629821777344px">Meninjau ulang produk yang sudah masuk kedalam keranjang, memilih metode pengiriman produk, mengaplikasikan program promo yang tersedia, serta memilih metode pembayaran untuk transaksi / pesanan tersebut.</td></tr></tbody></table><p id="72a86acb-89a1-4668-8c03-83be93db1f3c" class="">
+</p><h2 id="3e55b9d6-2d95-4273-8315-684bbda3883c" class="">Implementation Plan</h2><hr id="7f0190ba-e0ae-4e6f-8da3-c1316912d663"/><p id="92158fdc-aa88-4543-bdae-6cbe54d0b949" class="">
+</p><blockquote id="51a0b2aa-2135-474b-ad80-fcf233d3f3d0" class="">⚠️ Untuk rencana pengembangan produk, akan <strong>difokuskan terlebih dahulu </strong>untuk <strong>membangun</strong><em><strong> inventory management system</strong></em><strong> untuk sisi bisnis</strong> dalam <em><strong>mobile app platform</strong></em>.</blockquote><p id="21a41a00-67c0-4c45-ad4c-01306ea4ccd3" class="">
+</p><h3 id="ca951984-13b8-441e-b539-53bc86294db0" class="">Goals &amp; Success Metrics</h3><p id="3c0611e2-f34c-4f02-86ce-ee854f8db3f1" class="">Strategi Produk, Visi Produk, dan Kriteria Sukses Produk yang dibangun dapat dijelaskan  dalam matriks North Star Metrics Framework sebagai berikut.</p><p id="a2d3a437-1e11-429a-a394-cb3c3581a838" class="">
+</p><table id="51897180-493d-45f8-96db-c89017f7ce9e" class="simple-table"><thead class="simple-table-header"><tr id="fd302737-f9f4-44fa-a3aa-f66d590c7ee8"><th id="JU~Z" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>User Problem</strong></th><th id="UDUB" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Product Strategy</strong></th><th id="djwV" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Product Vision</strong></th></tr></thead><tbody><tr id="729e9afd-7b9c-4a3b-b00d-b9491d40af5b"><td id="JU~Z" class="" style="width:232.66898600260416px">Pengguna (<em>owner &amp; staff</em>) sulit untuk melakukan operasi bisnis dengan efektif dan efisien.</td><td id="UDUB" class="" style="width:232.66898600260416px"><strong>BigBro Admin</strong> adalah platform manajemen operasional bisnis yang komprehensif dalam satu aplikasi.</td><td id="djwV" class="" style="width:232.66898600260416px">Membantu pengguna untuk melakukan operasi bisnis dengan mudah dan intuitif dalam perangkat yang sangat ringan.</td></tr></tbody></table><p id="81530c82-a808-43f8-ba3d-b4e97fbedfaf" class="">
+</p><table id="a007bdfa-f7b6-423f-af15-8b931cb19227" class="simple-table"><tbody><tr id="d5e9dedd-d29b-4662-922c-2b6516da0d0b"><td id="CEEM" class="block-color-gray_background" style="width:232.66898600260416px"></td><td id="w:?J" class="block-color-gray_background" style="width:232.66898600260416px"><strong>North Star Metrics</strong></td><td id="Klnh" class="block-color-gray_background" style="width:232.66898600260416px"></td></tr><tr id="ee5bb3a7-57b4-409a-b90f-bf510e5c04e1"><td id="CEEM" class="" style="width:232.66898600260416px"></td><td id="w:?J" class="" style="width:232.66898600260416px">Kesuksesan pesanan</td><td id="Klnh" class="" style="width:232.66898600260416px"></td></tr><tr id="85b47bf9-a512-450e-b00d-a01107ba4eaf"><td id="CEEM" class="" style="width:232.66898600260416px"></td><td id="w:?J" class="" style="width:232.66898600260416px"></td><td id="Klnh" class="" style="width:232.66898600260416px"></td></tr><tr id="a68808f7-437a-4d55-9698-25fa63c6c300"><td id="CEEM" class="block-color-gray_background" style="width:232.66898600260416px"><strong>Reach</strong></td><td id="w:?J" class="block-color-gray_background" style="width:232.66898600260416px"><strong>Engagement</strong></td><td id="Klnh" class="block-color-gray_background" style="width:232.66898600260416px"><strong>Retention</strong></td></tr><tr id="9dff4ada-9a2d-4eaa-b018-8548a63f60b7"><td id="CEEM" class="" style="width:232.66898600260416px"># Transaksi penjualan</td><td id="w:?J" class="" style="width:232.66898600260416px"># Harga per transaksi</td><td id="Klnh" class="" style="width:232.66898600260416px"># Penjualan per bulan</td></tr></tbody></table><p id="9f3333d3-73db-491d-a352-8597d125539b" class="">
+</p><table id="8175dac5-51a8-4407-a167-97de24a2c091" class="simple-table"><thead class="simple-table-header"><tr id="4927580d-311a-44f1-8422-13c9edc1e25f"><th id="JYDh" class="simple-table-header-color simple-table-header" style="width:349.00347900390625px"><strong>Objectives</strong></th><th id="IgTd" class="simple-table-header-color simple-table-header" style="width:349.00347900390625px"><strong>Key Results</strong></th></tr></thead><tbody><tr id="e385a180-39db-4f0e-b909-d57083693448"><td id="JYDh" class="" style="width:349.00347900390625px">Membantu pengguna untuk melakukan operasi bisnis dengan mudah dan intuitif dalam perangkat yang sangat ringan.</td><td id="IgTd" class="" style="width:349.00347900390625px">- Menurunkan Backorder Rate sebesar 5%
+- Menurunkan Stock-Outs Rate sebesar 10%
+- Meningkatkan Product Sales sebesar 8%</td></tr></tbody></table><p id="20b0515f-0526-4d9d-a754-c7847940f497" class="">
+</p><h3 id="f03f8818-1c9f-463d-b43f-57f49c8f5fa8" class="">Prioritization*</h3><p id="dda6581a-39b7-469d-a8ae-10f4de151610" class="">Ide fitur yang ada pada produk yang ingin dikembangkan, dapat diprioritasi dengan matriks MoSCoW sebagai berikut.</p><p id="aa372548-0602-44f3-a4f7-354f3c4f76b5" class="">
+</p><table id="5bef2f0f-8caa-4a30-9ded-5de78fb560bf" class="simple-table"><thead class="simple-table-header"><tr id="5959ed93-d842-4b92-af24-4235eff70ac5"><th id="hwaS" class="simple-table-header-color simple-table-header" style="width:174.50173950195312px"><strong>[M]ust Have</strong></th><th id="r}M:" class="simple-table-header-color simple-table-header" style="width:174.50173950195312px"><strong>[S]hould Have</strong></th><th id="e&gt;~i" class="simple-table-header-color simple-table-header" style="width:174.50173950195312px"><strong>[C]ould Have</strong></th><th id="Ng\\" class="simple-table-header-color simple-table-header" style="width:174.50173950195312px"><strong>[W]ill Not Have</strong></th></tr></thead><tbody><tr id="e629274f-a28b-4532-ad98-46a3a3144f75"><td id="hwaS" class="" style="width:174.50173950195312px">Produk</td><td id="r}M:" class="" style="width:174.50173950195312px">Laporan</td><td id="e&gt;~i" class="" style="width:174.50173950195312px">Chat</td><td id="Ng\\" class="" style="width:174.50173950195312px"></td></tr><tr id="8ebd1353-d885-4296-91dd-46dac7467cc1"><td id="hwaS" class="" style="width:174.50173950195312px">Pesanan</td><td id="r}M:" class="" style="width:174.50173950195312px">Konsumen</td><td id="e&gt;~i" class="" style="width:174.50173950195312px"></td><td id="Ng\\" class="" style="width:174.50173950195312px"></td></tr></tbody></table><p id="b74be871-ce84-4744-bbe2-c5075f77c5e3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d543e1b6-670b-41b1-99aa-c6f1ceb7f0b7"><div style="font-size:1.5em"><span class="icon">✴️</span></div><div style="width:100%"><mark class="highlight-gray"><strong>Catatan :</strong></mark><mark class="highlight-gray"> Harus divalidasi dengan Business Owner &amp; Store Staff.</mark></div></figure><p id="70d22e24-8b74-4a64-8d73-8ae86f1b1e8f" class="">
+</p><h3 id="85bc8eba-53fd-466c-b735-c6231f24f89e" class="">Timeline / Roadmap*</h3><p id="e9ed6f5f-e609-4f77-8067-474ba52ad45a" class="">Rencana waktu pengerjaan tiap fitur sesuai dengan skala prioritas yang telah disusun sebelumnya adalah sebagai berikut.</p><p id="23700ba6-a6f9-4176-8535-89d9059d9c4f" class="">
+</p><figure id="da64db30-7965-4c66-a7f8-eb06256f7b60" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Roadmap.png"><img style="width:2665px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Roadmap.png"/></a></figure><p id="e9319eaf-9255-4615-ad1e-a6f2c9888c84" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ca879955-b83b-4432-9638-5091dd008c80"><div style="font-size:1.5em"><span class="icon">✴️</span></div><div style="width:100%"><mark class="highlight-gray"><strong>Catatan :</strong></mark><mark class="highlight-gray"> Harus divalidasi dengan UI/UX Designer, UX Writer, Engineer (BE &amp; Mobile), dan QA.</mark></div></figure><p id="52a26244-ecad-432d-ac93-9f9dd7aa960b" class="">
+</p><h3 id="3dc1927a-bd8f-47d6-8c50-98b198731fbd" class="">Key Features &amp; User Stories Map</h3><p id="9127e026-d8a1-4267-9c51-c36688e98d09" class="">
+</p><p id="d39ba3ca-fdfa-4664-bc0a-32550921b513" class=""><strong>Key Features</strong></p><table id="8183acdd-7a17-43b7-8aef-73bfcae3d0d4" class="simple-table"><thead class="simple-table-header"><tr id="51ee5dbf-65dd-449b-b0bb-493703f3adac"><th id="pl}H" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Key Features (MVP)</strong></th><th id="D=o=" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Sub-Features</strong></th><th id="fPNP" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Epic</strong></th></tr></thead><tbody><tr id="5dcdb5f6-5ccb-4926-b7a4-a89b02d8fe2a"><td id="pl}H" class="" style="width:232.66898600260416px">Produk</td><td id="D=o=" class="" style="width:232.66898600260416px">Permission Request &amp; Login</td><td id="fPNP" class="" style="width:232.66898600260416px">Epic 1</td></tr><tr id="1e5dfafc-e547-4f0c-8344-f24d96305e3d"><td id="pl}H" class="" style="width:232.66898600260416px"></td><td id="D=o=" class="" style="width:232.66898600260416px">Katalog Produk </td><td id="fPNP" class="" style="width:232.66898600260416px">Epic 2</td></tr><tr id="e6862f36-db7d-47cb-8dd0-9d60afa4d60b"><td id="pl}H" class="" style="width:232.66898600260416px"></td><td id="D=o=" class="" style="width:232.66898600260416px">Tambah Data Produk</td><td id="fPNP" class="" style="width:232.66898600260416px">Epic 3</td></tr><tr id="6c713abd-8d2f-4d43-8a0d-34a0632e2f7c"><td id="pl}H" class="" style="width:232.66898600260416px"></td><td id="D=o=" class="" style="width:232.66898600260416px">Update Data Produk</td><td id="fPNP" class="" style="width:232.66898600260416px">Epic 4</td></tr></tbody></table><p id="0862dd2d-7ea4-49f5-bd07-2c7ec37d4daf" class="">
+</p><p id="bd3abb64-23da-4677-bc2d-5361e6e782d5" class=""><strong>User Stories Map</strong></p><p id="2318d3e3-11d2-4945-8355-9434bf95fe06" class=""><strong>Epic 1 : Permission Request &amp; Login</strong></p><table id="acfda0ce-3a06-47dd-a4da-55b82d84535b" class="simple-table"><thead class="simple-table-header"><tr id="e0e3ad0f-28d3-4da6-9e90-453adc160b91"><th id="Ovhx" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Stories</strong></th><th id="};w&gt;" class="simple-table-header-color simple-table-header" style="width:232.66250610351562px"><strong>Requirements</strong></th><th id="\cov" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Acceptance Criteria</strong></th></tr></thead><tbody><tr id="793add45-05f8-413a-9a02-65af8a9713be"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user<strong>, saya ingin </strong>login ke dalam BigBro Admin dengan menggunakan akun yang sudah terverifikasi<strong>, supaya </strong>saya dapat menggunakan semua fitur yang tersedia berdasarkan peran yang saya miliki</td><td id="};w&gt;" class="" style="width:232.66250610351562px">- “Text Field”: Username, Password
+- “Button”: Login</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman login BigBro Admin<strong>
+When</strong>: Memasukkan username &amp; password, serta menekan “button” Login<strong>
+Then</strong>: Halaman dashboard BigBro Admin</td></tr><tr id="7d72a66f-7a76-45c0-91fd-a1543ab747e7"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai </strong>user<strong>, saya ingin </strong>membuat akses di BigBro Admin<strong>, supaya </strong>saya bisa mengisi formulir registrasi permission access</td><td id="};w&gt;" class="" style="width:232.66250610351562px">- “Button”: Request Access</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given: </strong>Halaman login BigBro Admin<strong>
+When</strong>: Menekan “button” Request Access<strong>
+Then</strong>: Halaman registrasi permission access</td></tr><tr id="7a45b611-79c6-42f6-9ed9-8b10b27f9ff9"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai </strong>user<strong>, saya ingin</strong> mengirimkan permintaan permission access di BigBro Admin, <strong>supaya </strong>saya dapat login kedalam platform dengan akun yang telah terverifikasi</td><td id="};w&gt;" class="" style="width:232.66250610351562px">- “Text Field”: Name, ID Pekerja, Password, Re-Confirm Password
+- “Button”: Request Access</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman registrasi permission access<strong>
+When</strong>: Memasukkan semua data yang perlu diisi, serta menekan “button” Request Access
+<strong>Then</strong>: Halaman dashboard BigBro Admin</td></tr></tbody></table><p id="57b90367-9406-4122-a20d-b23d7986c351" class="">
+</p><p id="57cb7bb0-f728-4251-aaa3-0edf1f57bb77" class=""><strong>Epic 2 : Katalog Produk</strong></p><table id="41195712-d651-4db1-b495-af43363dddcd" class="simple-table"><thead class="simple-table-header"><tr id="aaa79d9b-24e1-4987-8d50-7a9b3874c07f"><th id="Ovhx" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Stories</strong></th><th id="};w&gt;" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Requirements</strong></th><th id="\cov" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Acceptance Criteria</strong></th></tr></thead><tbody><tr id="6c70ca91-93a7-4935-ba55-1a864888cc0c"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> mengakses katalog produk, <strong>supaya</strong> bisa melihat katalog produk yang terdaftar di sistem BigBro Admin</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Widget”: Statistik Jumlah Produk (Pernah Dijual, Sedang Dijual, Ingin Dijual, Akan Dijual)
+- “Button”: Info Produk Selengkapnya
+- “Navbar Button”: Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman dashboard BigBro Admin
+<strong>When</strong>: Menekan “button” Info Produk Selengkapanya atau “navbar button” Produk
+<strong>Then</strong>: Halaman katalog produk</td></tr><tr id="93e2bf06-83f2-4b0c-b595-344881975dd9"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> memfilter dan mensortir produk yang ditampilkan pada halaman produk, <strong>supaya</strong> bisa dengan cepat memahami kondisi produk terakhir</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Button”: Filter 
+- “Card”: Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman katalog produk
+<strong>When</strong>: Menekan “button” Filter 
+<strong>Then</strong>: Halaman filter produk</td></tr><tr id="cbbfa90e-2089-4cd6-ab7b-19d17b4967fe"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> menerapkan fungsi filter dan sortir produk, <strong>supaya</strong> saya bisa menampilkan informasi produk yang saya butuhkan dengn cepat </td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Toggle List”: Filter berdasarkan
+- “Toggle List”: Sortir berdasarkan
+- “Button”: Tampilkan Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman filter produk
+<strong>When</strong>: Menekan berbagai opsi pada “toggle list” Filter berdasarkan dan Sortir berdasarkan, serta menekan “button” Tampilkan Produk
+<strong>Then</strong>: Halaman katalog produk</td></tr><tr id="13b4e70d-d0ab-41bb-a2ce-95df52bcf67b"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> melakukan bulk edit pada produk yang ada, <strong>supaya</strong> lebih cepat dalam melakukan update produk dengan status yang sama</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Heading Link”: Pilih Sekaligus
+- “Card”: Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman katalog produk
+<strong>When</strong>: Menekan “heading link” Pilih sekaligus 
+<strong>Then</strong>: Halaman pilih sekaligus produk</td></tr><tr id="d6d3a206-93fb-4722-be3f-66c88e4d33e7"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> menerapkan fungsi bulk edit pada produk, <strong>supaya</strong>  lebih cepat dalam melakukan update produk dengan status yang sama</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Heading Link”: Batalkan
+- “Checklist-Card”: Produk
+- “Button”: Atur sekaligus</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman pilih sekaligus produk
+<strong>When</strong>: Menekan “heading link” Batalkan ataupun “checklist-card” Produk dan “button” Atur Sekaligus
+<strong>Then</strong>: Halaman katalog produk</td></tr></tbody></table><p id="2c4d08df-e561-4204-a16b-212dd8986da0" class="">
+</p><p id="b6dfa779-9ea7-4430-a628-59b0cee87fdc" class=""><strong>Epic 3 : Tambah Data Produk</strong></p><table id="403b4cb5-9a12-4f5c-9d59-ff219217ee5f" class="simple-table"><thead class="simple-table-header"><tr id="c7d27857-e889-40ee-a480-63cfbc6c1bf2"><th id="Ovhx" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Stories</strong></th><th id="};w&gt;" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Requirements</strong></th><th id="\cov" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Acceptance Criteria</strong></th></tr></thead><tbody><tr id="ba5db299-a7a5-4108-9f95-5c2a9c04aaaa"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> menambah informasi detail produk, <strong>supaya</strong> dapat menyimpan informasi produk didalam sistem BigBro Admin dan melihatnya di katalog produk</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Button”: Tambah Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman katalog produk
+<strong>When</strong>: Menekan “button” Tambah Produk 
+<strong>Then</strong>: Halaman penambahan produk</td></tr><tr id="d6968780-d21d-4961-b882-8b44d356ef2c"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> memasukkan informasi detail produk, <strong>supaya</strong> informasi detail produk dapat tersimpan didalam sistem BigBro Admin</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Text Field”: Nama Produk
+- “Drop Down”: Kategori Produk
+- “Drop Down”: Brand
+-  “Switch Button”: Aktivasi Pre-Order Form untuk Buyer
+- “Button”: Tambah Varian Produk
+— <em>untuk masing-masing produk</em>
+- “Drop Down”: Status Produk (Pernah Dijual, Sedang Dijual, Ingin Dijual, Akan Dijual)
+- “Drop Down”: Warna 
+- “Drop Down”: Ukuran
+- “Text Field”: Harga
+-  “Text Field”: Stok | untuk produk yang Pernah Dijual menjadi non-aktif
+-  “Text Field”: Berat
+-  “Text Field”: SKU
+- “Button”: Foto Produk
+- “Calendar”: Prakiraan Pemesanan ke Vendor <em>(hanya muncul untuk produk yang Ingin Dijual)</em>
+- “Calendar”: Prakiraan Sampai Gudang <em>(hanya muncul untuk produk yang Akan Dijual)</em>
+- “Switch Button”: Aktifkan Pengingat Stok<em> (hanya muncul untuk produk yang Sedang Dijual)</em>
+- “Text Field”: Minimal Sisa Stok <em>(hanya muncul ketika Pengingat Stok diaktifkan)
+</em>- “Switch Button”: Tampilkan Varian Produk pada Buyer <em>(hanya muncul untuk produk yang Sedang Dijual, Ingin Dijual, dan Akan Dijual)</em>
+—
+- “Text Field”: Deskripsi Produk
+- “Text Field”: Video Produk
+- “Switch Button”: Aktifkan/Non-aktifkan Produk
+- “Button”: Simpan Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman tambah produk
+<strong>When</strong>: Memasukkan informasi detail produk pada semua form dan menekan “button” Simpan Produk
+<strong>Then</strong>: Halaman katalog produk</td></tr></tbody></table><p id="51d6c6e0-0982-4097-99a5-270ed002386e" class="">
+</p><p id="f3210442-be99-4cd8-90a2-9106eed1f977" class=""><strong>Epic 4 : Update Data Produk</strong></p><table id="9002e2e8-d0de-4a20-88b7-35340a7985fe" class="simple-table"><thead class="simple-table-header"><tr id="141c191e-dd21-42d5-8a61-bcef1b9c36ae"><th id="Ovhx" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Stories</strong></th><th id="};w&gt;" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Requirements</strong></th><th id="\cov" class="simple-table-header-color simple-table-header" style="width:232.66898600260416px"><strong>Acceptance Criteria</strong></th></tr></thead><tbody><tr id="215ad03f-0eb1-45d2-964e-16321e6843a4"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> mengupdate informasi produk yang sudah tersimpan di BigBro Admin, <strong>supaya</strong> bisa mengupdate informasi produk sesuai dengan kondisi terbaru</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Button”: Ubah Produk (pada setiap produk yang ada)</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman katalog produk
+<strong>When</strong>: Menekan “button” Ubah Produk
+<strong>Then</strong>: Halaman ubah produk</td></tr><tr id="6443f4bf-b537-402f-9d26-cd9cfabd8c28"><td id="Ovhx" class="" style="width:232.66898600260416px"><strong>Sebagai</strong> user, <strong>saya ingin</strong> melakukan perubahan detail produk, <strong>supaya </strong>bisa mengupdate informasi produk sesuai dengan kondisi terbaru dan menyimpannya di sistem BigBro Admin</td><td id="};w&gt;" class="" style="width:232.66898600260416px">- “Text Field”: Nama Produk
+- “Drop Down”: Kategori Produk
+- “Drop Down”: Brand
+-  “Switch Button”: Aktivasi Pre-Order Form untuk Buyer
+- “Button”: Tambah Varian Produk
+— <em>untuk masing-masing produk</em>
+- “Drop Down”: Status Produk (Pernah Dijual, Sedang Dijual, Ingin Dijual, Akan Dijual)
+- “Drop Down”: Warna 
+- “Drop Down”: Ukuran
+- “Text Field”: Harga
+-  “Text Field”: Stok | untuk produk yang Pernah Dijual menjadi non-aktif
+-  “Text Field”: Berat
+-  “Text Field”: SKU
+- “Button”: Foto Produk
+- “Calendar”: Prakiraan Pemesanan ke Vendor <em>(hanya muncul untuk produk yang Ingin Dijual)</em>
+- “Calendar”: Prakiraan Sampai Gudang <em>(hanya muncul untuk produk yang Akan Dijual)</em>
+- “Switch Button”: Aktifkan Pengingat Stok<em> (hanya muncul untuk produk yang Sedang Dijual)</em>
+- “Text Field”: Minimal Sisa Stok <em>(hanya muncul ketika Pengingat Stok diaktifkan)
+</em>- “Switch Button”: Tampilkan Varian Produk pada Buyer <em>(hanya muncul untuk produk yang Sedang Dijual, Ingin Dijual, dan Akan Dijual)</em>
+—
+- “Text Field”: Deskripsi Produk
+- “Text Field”: Video Produk
+- “Switch Button”: Aktifkan/Non-aktifkan Produk
+- “Button”: Simpan Produk</td><td id="\cov" class="" style="width:232.66898600260416px"><strong>Given</strong>: Halaman ubah produk
+<strong>When</strong>: Memasukkan informasi detail produk pada semua form dan menekan “button” Simpan Produk
+<strong>Then</strong>: Halaman katalog produk</td></tr></tbody></table><p id="1c79e767-0345-41a7-969e-a4800061833c" class="">
+</p><h3 id="e69621ed-9e86-41b7-88da-b83729c9847d" class="">User Flow</h3><p id="948756d5-9524-4742-8d85-1d9672697fe9" class="">
+</p><p id="041aa70b-be70-4ccd-8951-9b158c62d70a" class=""><strong>Key Features</strong></p><table id="ac1dc904-6310-4daa-8b8c-3382f6c1e50d" class="simple-table"><thead class="simple-table-header"><tr id="418810ad-2bc7-457f-976b-4b6740aa19c8"><th id="pl}H" class="simple-table-header-color simple-table-header" style="width:349.00347900390625px"><strong>Key Features (MVP)</strong></th><th id="D=o=" class="simple-table-header-color simple-table-header" style="width:349.00347900390625px"><strong>Sub-Features</strong></th></tr></thead><tbody><tr id="7f086428-5932-4b07-972a-1a0929e81534"><td id="pl}H" class="" style="width:349.00347900390625px">Produk</td><td id="D=o=" class="" style="width:349.00347900390625px">Permission Request &amp; Login</td></tr><tr id="abb27458-5ca0-4c1b-9e82-05fc5e3b9a7a"><td id="pl}H" class="" style="width:349.00347900390625px"></td><td id="D=o=" class="" style="width:349.00347900390625px">Katalog Produk </td></tr><tr id="e097c9e6-74ea-4522-84d9-0faa9bd507dd"><td id="pl}H" class="" style="width:349.00347900390625px"></td><td id="D=o=" class="" style="width:349.00347900390625px">Tambah Data Produk</td></tr><tr id="b5f56d96-3d34-4995-8844-031b0a08c65d"><td id="pl}H" class="" style="width:349.00347900390625px"></td><td id="D=o=" class="" style="width:349.00347900390625px">Update Data Produk</td></tr></tbody></table><p id="0743cca9-eca0-42fe-917a-35b075b26890" class="">
+</p><p id="b8a0c632-8710-4edd-8420-7e8d25994f0a" class=""><strong>User Flow</strong></p><figure id="e4af6d14-c351-414c-8afe-102780965035" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%203.png"><img style="width:4250px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Untitled%203.png"/></a></figure><p id="100051e6-1e32-4aa2-98ea-b94eba104d18" class=""><strong><mark class="highlight-gray">— </mark></strong><strong><mark class="highlight-gray"><em><a href="https://whimsical.com/bigbro-admin-user-flow-8B8t74SqpGhVFPsVuHiFpf">Click for Access Link </a></em></mark></strong></p><p id="28ecc8e8-7e9f-42f9-9b2c-01829ffe0c46" class="">
+</p><h3 id="d52b5d9a-1438-4603-84e8-6246463f1de1" class="">Lo-Fi Wireframe &amp; Hi-Fi Visual Design</h3><p id="d136cfb8-3828-44c9-90ec-e5b2ca48efe4" class="">
+</p><p id="4053e148-bf93-4120-bc31-08bbc6709c62" class="">⌛ <em>masih dalam tahapan pengerjaan</em></p><p id="fbd5b4a4-69fc-4a4e-a928-ea40b957b1c7" class="">
+</p><h3 id="eccd0ead-4202-4846-ab66-7410a4fbf699" class="">Test Case</h3><p id="0c3d637f-46e6-4a10-88d5-c761223f481e" class="">
+</p><p id="47f41db2-6392-497b-9154-5186e8c2eb9f" class="">⌛ <em>masih dalam tahapan pengerjaan</em></p><p id="f74bf87f-6e15-4c8d-9dcb-b51214b01b12" class="">
+</p><p id="817a90e6-8721-4e53-bb7c-4e2e19803274" class="">
+</p><p id="f449ec8b-953a-49a6-aeea-a2ee7f51f9db" class="">
+</p><p id="e601e947-52c0-4cbd-b2f5-1c66b970b63e" class="">
+</p><p id="6434dfc2-0ea2-4d24-9e89-64521946efe1" class="">
+</p><hr id="a816be29-001d-4edd-92cd-0f4abe09797d"/><figure id="87a8a849-d4db-4f52-a9a0-026726b8d61f" class="image"><a href="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Logo.png"><img style="width:84px" src="BigBro%20Sneakers%20Digitalization%20Strategy%20f61bf1073d0d4ab2921e8cce65aeed6b/Logo.png"/></a></figure><p id="aef8eace-3b56-477f-a808-04b3007f6ae9" class="">
+</p></div></article></body></html>
